@@ -1,0 +1,38 @@
+{
+    "Records": [
+        {
+            "eventVersion": "2.1",
+            "eventSource": "aws:s3",
+            "awsRegion": "us-east-1",
+            "eventTime": "2021-02-06T19:33:17.698Z",
+            "eventName": "ObjectCreated:Put",
+            "userIdentity": {
+                "principalId": "AWS:AIDA257JKJDEGHNAFVEPC"
+            },
+            "requestParameters": {
+                "sourceIPAddress": "125.176.5.18"
+            },
+            "responseElements": {
+                "x-amz-request-id": "64A3028D54DC27B2",
+                "x-amz-id-2": "sOSYNpsSFpJlJh9IdG58WhRQ7JFAq1F+Ml+fs+kZTfiWfWKNeLElTLP/V4GrpzRIf1bjbfOm1twAWbJpWifbs3bUis/2/ef9"
+            },
+            "s3": {
+                "s3SchemaVersion": "1.0",
+                "configurationId": "NGJiNjExY2ItNjhhNS00MDAxLWJiODgtZTRkMDYyZWI2NzZm",
+                "bucket": {
+                    "name": "serverlesscdkdemo-serverlessstack-us-east-1-75157",
+                    "ownerIdentity": {
+                        "principalId": "A2CCFJ6ITC2T2N"
+                    },
+                    "arn": "arn:aws:s3:::serverlesscdkdemo-serverlessstack-us-east-1-75157"
+                },
+                "object": {
+                    "key": "batch/input_s3bb.json",
+                    "size": 215,
+                    "eTag": "8c1f11cf63cbf68ffbdbb47a64f0fa14",
+                    "sequencer": "00601EEEFF75518D6D"
+                }
+            }
+        }
+    ]
+}

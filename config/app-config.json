@@ -1,0 +1,15 @@
+{
+    "Project": {
+        "Name": "ServerlessCdk",
+        "Stage": "Demo",
+        "Account": "751571111111",
+        "Region": "us-east-1",
+        "Profile": "cdk-demo"
+    },
+
+    "Stack": {
+        "CommonPattern": {
+            "Name": "CommonPatternStack"
+        }
+    }
+}

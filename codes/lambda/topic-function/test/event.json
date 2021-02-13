@@ -1,0 +1,22 @@
+{
+    "Records": [
+        {
+            "EventSource": "aws:sns",
+            "EventVersion": "1.0",
+            "EventSubscriptionArn": "arn:aws:sns:us-east-1:751571111111:api-async-topic:403b050b-8bb7-4c46-a566-a4969862feab",
+            "Sns": {
+                "Type": "Notification",
+                "MessageId": "8df594bd-5fd0-5e07-a151-cc2a20998712",
+                "TopicArn": "arn:aws:sns:us-east-1:751571111111:api-async-topic",
+                "Subject": null,
+                "Message": "[\n    {\n        \"id\": \"xx-01\",\n        \"data\": \"20210207-110733\"\n    }\n]",
+                "Timestamp": "2021-02-05T17:14:49.670Z",
+                "SignatureVersion": "1",
+                "Signature": "lvw/VPrXomuRPlFJPsSRs3TEqqpScv5IZP4hG0jYOCkGznBX47agSG0ycHh3N4X8V7B2Rc5bvd4O0ZWJDeuHP7o+hN38IGd0umSM2KtbbkBvPSZRtYfyOSp9LDtXyle88wU9emX03+xQrUkDBKe76vJ1QS/noZjoPsFEL8PA8dGmoYQSNFfGjZZv0ircUtc8QVJbO1ijRtP4JH9lArqQ5P8GpORigqxrMd7GcZXwuQr/IJ6FV6fcTvOYDzV+cB8TyIdUYfU04AMQqNcBk6mk1Y9wA3n1VEiW4lan7XXB/UMpslSVl1UhAowu61c7/M5TQJJvM/F2FmnYxo/J9Z6Cvg==",
+                "SigningCertUrl": "https://sns.us-east-1.amazonaws.com/SimpleNotificationService-010a507c1833636cd94bdb98bd93083a.pem",
+                "UnsubscribeUrl": "https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-1:751571111111:api-async-topic:403b050b-8bb7-4c46-a566-a4969862feab",
+                "MessageAttributes": {}
+            }
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "isbn": "isbn-02",
+        "title": "book-02"
+    },
+    {
+        "isbn": "isbn-03",
+        "title": "book-03"
+    },
+    {
+        "isbn": "isbn-04",
+        "title": "book-04"
+    }
+]
