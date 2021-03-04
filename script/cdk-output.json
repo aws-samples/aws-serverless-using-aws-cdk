@@ -1,6 +1,0 @@
-{
-  "ServerlessCdkDemo-ServerlessStack": {
-    "restapiEndpointC67DEFEA": "https://ddnbsn9wy9.execute-api.us-east-1.amazonaws.com/prod/",
-    "apiendpoint": "https://ddnbsn9wy9.execute-api.us-east-1.amazonaws.com/prod/books"
-  }
-}

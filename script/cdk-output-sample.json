@@ -1,0 +1,6 @@
+{
+  "ServerlessCdkDemo-ServerlessStack": {
+    "restapiEndpointC67DEFEA": "https://xxxxxxxx.execute-api.region.amazonaws.com/prod/",
+    "apiendpoint": "https://xxxxxx.execute-api.region.amazonaws.com/prod/books"
+  }
+}

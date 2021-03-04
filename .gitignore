@@ -11,3 +11,5 @@ cdk.out
 .parcel-cache
 
 codes/**/*.pyc
+
+script/cdk-output.json
