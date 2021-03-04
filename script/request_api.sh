@@ -16,4 +16,4 @@ echo $JQ_ARG
 CDK_OUTPUT=script/cdk-output.json
 ENDPOINT=$(cat $CDK_OUTPUT | jq -r $JQ_ARG)
 
-curl -X GET $ENDPOINT
+curl -X GET $ENDPOINT | jq
