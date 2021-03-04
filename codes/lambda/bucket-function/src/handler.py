@@ -3,42 +3,31 @@ import json
 import boto3
 from botocore.exceptions import ClientError
 
-_profile = None
 _table_name = os.environ.get('TABLE_NAME', 'ServerlessCdkDemo-ServerlessStack-ddb-table')
 
-def set_profile(profile):
-    global _profile
-    _profile = profile
+
+def get_client(service):
+    return boto3.client(service)
 
 
-def get_client(service, profile):
-    if profile is None:
-        return boto3.client(service)
-    else:
-        return boto3.Session(profile_name=profile).client(service)
-
-
-def get_resource(service, profile):
-    if profile is None:
-        return boto3.Session().resource(service)
-    else:
-        return boto3.Session(profile_name=profile).resource(service)
+def get_resource(service):
+    return boto3.Session().resource(service)
 
 
 def put_ddb(msg):
-    dynamodb = get_resource('dynamodb', _profile)
+    dynamodb = get_resource('dynamodb')
     table = dynamodb.Table(_table_name)
     
-    # try:
-    response = table.put_item(Item=msg)
-    # except ClientError as e:
-    #     print('Error: table.put_item', e)
+    try:
+        response = table.put_item(Item=msg)
+    except ClientError as e:
+        print('Error: table.put_item', e)
 
 
 def handle(event, context):
     # print('====>', json.dumps(event))
 
-    s3 = get_client('s3', _profile)
+    s3 = get_client('s3')
 
     for record in event['Records']:
         print('record====>', record)

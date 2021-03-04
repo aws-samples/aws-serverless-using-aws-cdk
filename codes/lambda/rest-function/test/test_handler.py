@@ -5,9 +5,13 @@ import json
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))+'/src')
 import handler
 
-handler.set_profile('cdk-demo')
+os.environ['AWS_PROFILE'] = 'cdk-demo'
 
-with open('event.json') as f:
-    event = json.load(f)
-    response = handler.handle(event, None)
-    print('response', response)
+def test_handle():
+    print('test_handle')
+    with open('event.json') as f:
+        event = json.load(f)
+        response = handler.handle(event, None)
+        print('response', response)
+
+test_handle()
