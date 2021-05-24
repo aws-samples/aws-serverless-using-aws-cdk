@@ -28,7 +28,8 @@ export class ServerlessStack extends cdk.Stack {
             partitionKey: {
                 name: 'isbn',
                 type: ddb.AttributeType.STRING
-            }
+            },
+            removalPolicy: cdk.RemovalPolicy.DESTROY // not recommended for prod-stage
         });
     }
 
@@ -102,8 +103,11 @@ export class ServerlessStack extends cdk.Stack {
     }
 
     private createS3Bucket(): s3.Bucket {
+        const bucketName = `${this.stackName}-${this.region}-${this.account.substring(0, 5)}`.toLowerCase();
+        
         return new s3.Bucket(this, 'bucket', {
-            bucketName: `${this.stackName.toLowerCase()}-${this.region}-${this.account.substring(0, 5)}`
+            bucketName,
+            removalPolicy: cdk.RemovalPolicy.DESTROY // not recommended for prod-stage
         });
     }
 
