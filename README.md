@@ -89,7 +89,7 @@ First of all, enter your project basic configuration in the follwoing document: 
         "Name": "ServerlessCdk",
         "Stage": "Demo",
         "Account": "75157*******",
-        "Region": "us-east-1",
+        "Region": "us-east-2",
         "Profile": "cdk-demo"
     }
 }
@@ -152,7 +152,7 @@ For ***Async Batch Request***, execute the following command, which will upload 
 sh script/upload_s3.sh
 ...
 ...
-upload: script/input_s3.json to s3://serverlesscdkdemo-serverlessstack-us-east-1-75157/batch/input_s3.json
+upload: script/input_s3.json to s3://serverlesscdkdemo-serverlessstack-us-east-2-75157/batch/input_s3.json
 ```
 
 After executing this command, please check your DynamoDB. You can find the multiple items in that.

@@ -4,7 +4,7 @@
 CONFIG_INFRA=config/app-config.json
 
 ACCOUNT=$(cat $CONFIG_INFRA | jq -r '.Project.Account') #ex> 123456789123
-REGION=$(cat $CONFIG_INFRA | jq -r '.Project.Region') #ex> us-east-1
+REGION=$(cat $CONFIG_INFRA | jq -r '.Project.Region') #ex> us-east-2
 PROFILE_NAME=$(cat $CONFIG_INFRA | jq -r '.Project.Profile') #ex> cdk-demo
 PROJECT_NAME=$(cat $CONFIG_INFRA | jq -r '.Project.Name') #ex> TextClassification
 PROJECT_STAGE=$(cat $CONFIG_INFRA | jq -r '.Project.Stage') #ex> Dev

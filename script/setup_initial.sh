@@ -11,7 +11,7 @@ cdk --version
 jq --version
 
 ACCOUNT=$(cat $CONFIG_INFRA | jq -r '.Project.Account') #ex> 123456789123
-REGION=$(cat $CONFIG_INFRA | jq -r '.Project.Region') #ex> us-east-1
+REGION=$(cat $CONFIG_INFRA | jq -r '.Project.Region') #ex> us-east-2
 PROFILE_NAME=$(cat $CONFIG_INFRA | jq -r '.Project.Profile') #ex> cdk-demo
 
 echo ==--------ConfigInfo---------==

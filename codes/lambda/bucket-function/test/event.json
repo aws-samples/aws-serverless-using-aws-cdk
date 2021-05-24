@@ -3,7 +3,7 @@
         {
             "eventVersion": "2.1",
             "eventSource": "aws:s3",
-            "awsRegion": "us-east-1",
+            "awsRegion": "us-east-2",
             "eventTime": "2021-02-06T19:33:17.698Z",
             "eventName": "ObjectCreated:Put",
             "userIdentity": {
@@ -20,11 +20,11 @@
                 "s3SchemaVersion": "1.0",
                 "configurationId": "NGJiNjExY2ItNjhhNS00MDAxLWJiODgtZTRkMDYyZWI2NzZm",
                 "bucket": {
-                    "name": "serverlesscdkdemo-serverlessstack-us-east-1-75157",
+                    "name": "serverlesscdkdemo-serverlessstack-us-east-2-75157",
                     "ownerIdentity": {
                         "principalId": "A2CCFJ6ITC2T2N"
                     },
-                    "arn": "arn:aws:s3:::serverlesscdkdemo-serverlessstack-us-east-1-75157"
+                    "arn": "arn:aws:s3:::serverlesscdkdemo-serverlessstack-us-east-2-75157"
                 },
                 "object": {
                     "key": "batch/input_s3bb.json",
