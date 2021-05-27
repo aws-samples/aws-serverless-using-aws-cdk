@@ -2,6 +2,12 @@
 
 This repository provides the basic patterns of [AWS Serverless](https://aws.amazon.com/serverless) using [AWS CDK](https://aws.amazon.com/cdk).
 
+Other "Using AWS CDK" series can be found in:
+
+- [AWS ECS DevOps Using AWS CDK](https://github.com/aws-samples/aws-ecs-devops-using-aws-cdk)
+- [Amazon SageMaker Model Serving using AWS CDK](https://github.com/aws-samples/amazon-sagemaker-model-serving-using-aws-cdk)
+- [AWS IoT Greengrass Ver2 using AWS CDK](https://github.com/aws-samples/aws-iot-greengrass-v2-using-aws-cdk)
+
 ## Contents
 
 1. [**Repository structure**](#repository-structure)
