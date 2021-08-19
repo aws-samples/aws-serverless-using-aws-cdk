@@ -169,7 +169,31 @@ For ***Sync Single Request***, execute the following command, which will send ht
 sh script/request_api.sh
 ...
 ...
-[{"isbn": "isbn-01", "title": "book-01"}, {"isbn": "isbn-03", "title": "book-03"}, {"isbn": "isbn-02", "title": "book-02"}, {"isbn": "isbn-04", "title": "book-04"}]
+{
+  "status": "success",
+  "books": [
+    {
+      "isbn": "isbn-01",
+      "src": "sns",
+      "title": "book-01"
+    },
+    {
+      "isbn": "isbn-03",
+      "src": "s3",
+      "title": "book-03"
+    },
+    {
+      "isbn": "isbn-02",
+      "src": "s3",
+      "title": "book-02"
+    },
+    {
+      "isbn": "isbn-04",
+      "src": "s3",
+      "title": "book-04"
+    }
+  ]
+}
 ```
 
 ## **About CDK-Project**

@@ -1,5 +1,6 @@
 import os
 import json
+
 import boto3
 from botocore.exceptions import ClientError
 
@@ -14,37 +15,41 @@ def get_resource(service):
     return boto3.Session().resource(service)
 
 
-def put_ddb(msg):
-    dynamodb = get_resource('dynamodb')
-    table = dynamodb.Table(_table_name)
-    
+def get_list(s3, bucket_name, bucket_key):
     try:
-        response = table.put_item(Item=msg)
+        response = s3.get_object(Bucket=bucket_name, Key=bucket_key)
+        print("CONTENT TYPE: " + response['ContentType'])
+
+        body = response['Body']
+        list = json.load(body)['books']
+
+        return list
     except ClientError as e:
-        print('Error: table.put_item', e)
+        print('error: get_list', e)
+        return None
+
+
+def put_ddb(table, item):
+    try:
+        response = table.put_item(Item=item)
+    except ClientError as e:
+        print('Error: put_ddb', e)
 
 
 def handle(event, context):
-    # print('====>', json.dumps(event))
+    # print('event====>', json.dumps(event))
 
     s3 = get_client('s3')
+    dynamodb = get_resource('dynamodb')
+    table = dynamodb.Table(_table_name)
 
     for record in event['Records']:
-        print('record====>', record)
+        # print('record====>', record)
         bucket_name = record['s3']['bucket']['name']
         bucket_key = record['s3']['object']['key']
 
-        try:
-            file_path = '/tmp/input.json'
-
-            s3.download_file(bucket_name, bucket_key, file_path)
-
-            with open(file_path) as f:
-                list = json.load(f)
-                print('===>list', list)
-
-                for item in list:
-                    print('===>', item)
-                    put_ddb(item)
-        except Exception as e:
-            print('error: s3.download_file', e)
+        list = get_list(s3, bucket_name, bucket_key)
+        if list is not None:
+            for item in list:
+                print('put item===>', item)
+                put_ddb(table, item)

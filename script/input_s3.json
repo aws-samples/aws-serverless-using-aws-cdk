@@ -1,17 +1,19 @@
-[
-    {
-        "isbn": "isbn-02",
-        "title": "book-02",
-        "src": "s3"
-    },
-    {
-        "isbn": "isbn-03",
-        "title": "book-03",
-        "src": "s3"
-    },
-    {
-        "isbn": "isbn-04",
-        "title": "book-04",
-        "src": "s3"
-    }
-]
+{
+    "books": [
+        {
+            "isbn": "isbn-02",
+            "title": "book-02",
+            "src": "s3"
+        },
+        {
+            "isbn": "isbn-03",
+            "title": "book-03",
+            "src": "s3"
+        },
+        {
+            "isbn": "isbn-04",
+            "title": "book-04",
+            "src": "s3"
+        }
+    ]
+}
