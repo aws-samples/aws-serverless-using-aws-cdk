@@ -1,6 +1,10 @@
 # AWS Serverless using AWS CDK
 
-This repository provides the basic patterns of [AWS Serverless](https://aws.amazon.com/serverless) using [AWS CDK](https://aws.amazon.com/cdk).
+This repository describes how to implement basic patterns of [AWS Serverless](https://aws.amazon.com/serverless) using [AWS CDK](https://aws.amazon.com/cdk). AWS CDK is a great tool for serverless applications because it helps you manage multiple serverless resources in one place.
+
+Korean practice guide and demo is provided through the following video: [AWS DevAxConnect - AWS Serverless service development with AWS CDK](https://www.twitch.tv/videos/1070023684?collection=4wZXJvncHRaoEg).
+
+This project was implemented based on [AWS CDK Project Template for DevOps](https://github.com/aws-samples/aws-cdk-project-template-for-devops) for more fluent DevOps application.
 
 Other "Using AWS CDK" series can be found in:
 

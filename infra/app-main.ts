@@ -5,7 +5,7 @@ import { ServerlessStack } from './stack/serverless-stack';
 
 import { loadConfig } from '../lib/utils/config-loaders';
 
-let appConfig: any = loadConfig('config/app-config.json');
+let appConfig: any = loadConfig('config/app-config-demo.json');
 const stackProps: cdk.StackProps = { 
     env: {
         account: appConfig.Project.Account,
