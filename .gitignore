@@ -3,7 +3,8 @@
 *.d.ts
 node_modules
 
-# vcs
+# vsc
+**/.DS_Store
 .vscode/**
 
 # CDK asset staging directory
