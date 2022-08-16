@@ -20,15 +20,15 @@ Other "Using AWS CDK" series can be found in:
   
 3. [**Solution architecture**](#solution-architecture)
 
-4. [**How to deploy**](#how-to-deploy)
+4. [**About CDK-Project**](#about-cdk-project)
+
+5. [**How to deploy**](#how-to-deploy)
 
     - [**Prerequisites**](#prerequisites)
     - [**How to set up**](#how-to-set-up)
     - [**How to provision**](#how-to-provision)
 
-5. [**How to test**](#how-to-test)
-
-6. [**About CDK-Project**](#about-cdk-project)
+6. [**How to test**](#how-to-test)
 
 7. [**How to clean up**](#how-to-clean-up)
 
@@ -38,7 +38,7 @@ Other "Using AWS CDK" series can be found in:
 
 ## **Repository structure**
 
-Because this repository is basically a CDK-Project which is based on typescript, the project structure follows the basic CDK-Project form. This porject provide one stack and 3 lambdas. Before depoy this project, ***config/app-config.json*** should be filled in according to your AWS Account.
+Because this repository is basically a CDK-Project which is based on typescript, the project structure follows the basic CDK-Project form. This porject provide one stack and 3 lambdas. Before depoy this project, `config/app-config-demo.json` should be filled in according to your AWS Account.
 
 ![ProjectStructure](docs/asset/project.png)
 
@@ -68,13 +68,29 @@ AWS services used are as follows:
 - [Amazon API Gateway](https://aws.amazon.com/api-gateway): a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale
 - [Amazon DynamoDB](https://aws.amazon.com/dynamodb): a fast and flexible NoSQL database service for any scale
 
-## **How to deploy**
+## **About CDK-Project**
 
 To efficiently define and provision serverless resources, [AWS Cloud Development Kit(CDK)](https://aws.amazon.com/cdk) which is an open source software development framework to define your cloud application resources using familiar programming languages is utilized .
 
 ![AWSCDKIntro](docs/asset/aws_cdk_intro.png)
 
-Because this solusion is implemented in CDK, we can deploy these cloud resources using CDK CLI. Among the various languages supported, this solution used typescript. Because the types of **typescript** are very strict, with the help of auto-completion, typescrip offers a very nice combination with AWS CDK.
+Because this solusion is implemented in CDK, we can deploy these cloud resources using CDK CLI. Among the various languages supported, this solution used typescript. Because the types of `typescript` are very strict, with the help of auto-completion, typescrip offers a very nice combination with AWS CDK.
+
+### **CDK specific file**
+
+The `cdk.json` file tells the CDK Toolkit how to execute your app.
+
+### **CDK Commands**
+
+And the more usuful CDK commands are
+
+- `cdk list`        list up CloudFormation Stacks
+- `cdk deploy`      deploy this stack to your default AWS account/region
+- `cdk diff`        compare deployed stack with current state
+- `cdk synth`       emits the synthesized CloudFormation template
+- `cdk destroy`     remove resources
+
+## **How to deploy**
 
 ***Caution***: This solution contains not-free tier AWS services. So be careful about the possible costs. Fortunately, serverless services minimize cost if not used.
 
@@ -91,7 +107,7 @@ Please refer to the kind guide in [CDK Workshop](https://cdkworkshop.com/15-prer
 
 ### **How to set up**
 
-First of all, enter your project basic configuration in the follwoing document: ***config/app-config.json***. Fill in your project's "Name", "Stage", "Account", "Region", "Profile(AWS CLI Credentials)" in "Project" according to your environments.
+First of all, enter your project basic configuration in the follwoing document: `config/app-config-demo.json`. Fill in your project's "Name", "Stage", "Account", "Region", "Profile(AWS CLI Credentials)" in "Project" according to your environments.
 
 ```json
 {
@@ -118,7 +134,7 @@ aws sts get-caller-identity --profile [your-profile-name]
 }
 ```
 
-And then execute the following commands to set up CDK-Project. For details, please check **setup_initial.sh** file.
+And then execute the following command to set up CDK-Project. For details, please check `setup_initial.sh` file.
 
 ```bash
 sh ./script/setup_initial.sh  
@@ -135,7 +151,7 @@ cdk list
 ServerlessCdkDemo-ServerlessStack
 ```
 
-Now, everything is ready, let's provision all stacks using AWS CDK. Execute the following command which will deploy all stacks in order of subordination.
+Now, everything is ready, let's provision a stack using AWS CDK. Execute the following command which will deploy the stack and create a `cdk-output.json` file in `script` directory, which includes deployment result outouts. For details, please check `deploy_stacks.sh` file.
 
 ```bash
 sh script/deploy_stacks.sh
@@ -200,21 +216,9 @@ sh script/request_api.sh
 }
 ```
 
-## **About CDK-Project**
-
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
-
-And the more usuful CDK commands are
-
-- `cdk list`        list up CloudFormation Stacks
-- `cdk deploy`      deploy this stack to your default AWS account/region
-- `cdk diff`        compare deployed stack with current state
-- `cdk synth`       emits the synthesized CloudFormation template
-- `cdk destroy`     remove resources
-
 ## **How to clean up**
 
-Execute the following command, which will destroy all resources except S3 Buckets and DynamoDB Tables. So destroy these resources in AWS web console manually.
+Execute the following command, which will destroy all resources including S3 Buckets and DynamoDB Tables. For details, please check `destroy_stacks.sh` file.
 
 ```bash
 sh script/destroy_stacks.sh
