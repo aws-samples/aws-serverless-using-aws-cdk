@@ -11,6 +11,8 @@ export class ServerlessStack extends cdk.Stack {
     constructor(scope: Construct, id: string, props?: cdk.StackProps) {
         super(scope, id, props);
 
+        this.exportDeploymentEnv(props!);
+
         const table = this.createDdbTable();
         
         const topic = this.createSnsTopic();
@@ -128,8 +130,20 @@ export class ServerlessStack extends cdk.Stack {
         new cdk.CfnOutput(this, 'api-endpoint', {
             value: `https://${rest.restApiId}.execute-api.${this.region}.amazonaws.com/prod/${resourceName}`,
             exportName: 'APIGatewayEndpoint'
-        })
+        });
 
         return rest;
+    }
+
+    private exportDeploymentEnv(props: cdk.StackProps) {
+        new cdk.CfnOutput(this, 'deployment-account', {
+            value: props.env?.account!,
+            exportName: 'DeploymentAccount'
+        });
+
+        new cdk.CfnOutput(this, 'deployment-region', {
+            value: props.env?.region!,
+            exportName: 'DeploymentRegion'
+        })
     }
 }
