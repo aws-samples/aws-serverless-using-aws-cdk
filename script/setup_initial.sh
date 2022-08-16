@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Configuration File Path
-CONFIG_INFRA=config/app-config.json
+CONFIG_INFRA=config/app-config-demo.json
 
 echo ==--------CheckDedendencies---------==
 npm install -g aws-cdk

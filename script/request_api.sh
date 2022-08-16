@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Configuration File Path
-CONFIG_INFRA=config/app-config.json
+CONFIG_INFRA=config/app-config-demo.json
 
 ACCOUNT=$(cat $CONFIG_INFRA | jq -r '.Project.Account') #ex> 123456789123
 REGION=$(cat $CONFIG_INFRA | jq -r '.Project.Region') #ex> us-east-2

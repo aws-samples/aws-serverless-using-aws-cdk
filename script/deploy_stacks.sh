@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Configuration File Path
-CONFIG_INFRA=config/app-config.json
+CONFIG_INFRA=config/app-config-demo.json
 
 PROFILE_NAME=$(cat $CONFIG_INFRA | jq -r '.Project.Profile') #ex> cdk-demo
 
