@@ -20,21 +20,23 @@ Other "Using AWS CDK" series can be found in:
   
 3. [**Solution architecture**](#solution-architecture)
 
-4. [**About CDK-Project**](#about-cdk-project)
+4. [**Quick Guide**](#quick-guide)
 
-5. [**How to deploy**](#how-to-deploy)
+5. [**About CDK-Project**](#about-cdk-project)
+
+6. [**How to deploy**](#how-to-deploy)
 
     - [**Prerequisites**](#prerequisites)
     - [**How to set up**](#how-to-set-up)
     - [**How to provision**](#how-to-provision)
 
-6. [**How to test**](#how-to-test)
+7. [**How to test**](#how-to-test)
 
-7. [**How to clean up**](#how-to-clean-up)
+8. [**How to clean up**](#how-to-clean-up)
 
-8. [**Security**](#security)
+9. [**Security**](#security)
 
-9. [**License**](#license)
+10.  [**License**](#license)
 
 ## **Repository structure**
 
@@ -67,6 +69,21 @@ AWS services used are as follows:
 - [Amazon Simple Storage Service(S3)](https://aws.amazon.com/s3): object storage built to store and retrieve any amount of data from anywhere
 - [Amazon API Gateway](https://aws.amazon.com/api-gateway): a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale
 - [Amazon DynamoDB](https://aws.amazon.com/dynamodb): a fast and flexible NoSQL database service for any scale
+
+## **Quick Guide**
+
+Just execute the following commands step by step for quick practice.
+
+```bash
+vim config/app-config-demo.json # change Account/Region
+sh script/deploy_stacks.sh      # deploy a stack
+sh script/request_api.sh        # invoke APIGateway(empty book list)
+sh script/publish_sns.sh        # add a book through SNS
+sh script/request_api.sh        # invoke APIGateway(a book in list)
+sh script/upload_s3.sh          # add 3 books through S3
+sh script/request_api.sh        # invoke APIGateway(4 books in list)
+sh script/destroy_stacks.sh     # destroy a stack
+```
 
 ## **About CDK-Project**
 
