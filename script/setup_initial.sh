@@ -27,7 +27,14 @@ npm install
 echo .
 echo .
 
+echo ==--------CDKVersionCheck---------==
+alias cdk-local="./node_modules/.bin/cdk"
+cdk --version
+cdk-local --version
+echo .
+echo .
+
 echo ==--------BootstrapCDKEnvironment---------==
-cdk bootstrap aws://$ACCOUNT/$REGION --profile $PROFILE_NAME
+cdk-local bootstrap aws://$ACCOUNT/$REGION --profile $PROFILE_NAME
 echo .
 echo .
