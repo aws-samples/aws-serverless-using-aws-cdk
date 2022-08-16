@@ -1,13 +1,14 @@
-import * as cdk from '@aws-cdk/core';
-import * as sns from '@aws-cdk/aws-sns';
-import * as lambda from '@aws-cdk/aws-lambda';
-import * as ddb from '@aws-cdk/aws-dynamodb';
-import * as lambdaEvent from '@aws-cdk/aws-lambda-event-sources';
-import * as api from '@aws-cdk/aws-apigateway';
-import * as s3 from '@aws-cdk/aws-s3';
+import { Construct } from 'constructs';
+import * as cdk from 'aws-cdk-lib';
+import * as sns from 'aws-cdk-lib/aws-sns';
+import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as ddb from 'aws-cdk-lib/aws-dynamodb';
+import * as lambdaEvent from 'aws-cdk-lib/aws-lambda-event-sources';
+import * as api from 'aws-cdk-lib/aws-apigateway';
+import * as s3 from 'aws-cdk-lib/aws-s3';
 
 export class ServerlessStack extends cdk.Stack {
-    constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+    constructor(scope: Construct, id: string, props?: cdk.StackProps) {
         super(scope, id, props);
 
         const table = this.createDdbTable();
@@ -44,7 +45,7 @@ export class ServerlessStack extends cdk.Stack {
 
         const func = new lambda.Function(this, 'topic-function', {
             functionName: `${this.stackName}-topic-function`,
-            runtime: lambda.Runtime.PYTHON_3_6,
+            runtime: lambda.Runtime.PYTHON_3_9,
             handler: 'handler.handle',
             code: lambda.Code.fromAsset(path),
             environment: {
@@ -72,7 +73,7 @@ export class ServerlessStack extends cdk.Stack {
 
         const func = new lambda.Function(this, 'bucket-function', {
             functionName: `${this.stackName}-bucket-function`,
-            runtime: lambda.Runtime.PYTHON_3_6,
+            runtime: lambda.Runtime.PYTHON_3_9,
             handler: 'handler.handle',
             code: lambda.Code.fromAsset(path),
             environment: {
@@ -97,7 +98,7 @@ export class ServerlessStack extends cdk.Stack {
 
         const func = new lambda.Function(this, 'rest-function', {
             functionName: `${this.stackName}-rest-function`,
-            runtime: lambda.Runtime.PYTHON_3_6,
+            runtime: lambda.Runtime.PYTHON_3_9,
             handler: 'handler.handle',
             code: lambda.Code.fromAsset(path),
             environment: {
