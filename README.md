@@ -99,7 +99,7 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 ### **CDK Commands**
 
-And the more usuful CDK commands are
+And the more useful CDK commands are
 
 - `cdk list`        list up CloudFormation Stacks
 - `cdk deploy`      deploy this stack to your default AWS account/region
