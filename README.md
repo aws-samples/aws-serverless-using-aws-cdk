@@ -82,7 +82,7 @@ sh script/publish_sns.sh        # add a book through SNS
 sh script/request_api.sh        # invoke APIGateway(a book in list)
 sh script/upload_s3.sh          # add 3 books through S3
 sh script/request_api.sh        # invoke APIGateway(4 books in list)
-sh script/destroy_stacks.sh     # destroy a stack
+sh script/destroy_stacks.sh     # destroy stacks
 ```
 
 ## **About CDK-Project**
