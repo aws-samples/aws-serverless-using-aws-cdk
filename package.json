@@ -1,5 +1,5 @@
 {
-  "name": "aws-serverless-using-cdk",
+  "name": "@aws-samples/aws-serverless-using-cdk",
   "version": "0.1.0",
   "bin": {
     "aws-serverless-using-cdk": "bin/aws-serverless-using-cdk.js"
